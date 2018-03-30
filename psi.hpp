@@ -44,9 +44,9 @@ struct PsiEstimator {
 	
 	PsiEstimator(float guess_rate,
 		xv lapses=linspace<float>(0.01, 0.2, 10),
-		xv thresholds=linspace<float>(-0.5, 1.5, 30),
+		xv thresholds=linspace<float>(-0.1, 1.1, 30),
 		xv slopes=linspace<float>(0.0, 10, 30),
-		xv xs=linspace<float>(0.1, 1.0, 100)
+		xv xs=linspace<float>(0.0, 1.0, 100)
 		)
 		: guess_rate(guess_rate), lapses(lapses), thresholds(thresholds), slopes(slopes),
 		xs(xs)
