@@ -2,7 +2,7 @@
   "name": "psiest",
   "version": "0.0.1",
   "description": "",
-  "main": "psiest.js",
+  "main": "psijs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
