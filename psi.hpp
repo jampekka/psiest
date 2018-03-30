@@ -4,10 +4,6 @@
 #include "xtensor/xmath.hpp"
 #include "xtensor/xvectorize.hpp"
 
-namespace fastapprox {
-#include "fastonebigheader.h"
-}
-
 namespace psiest {
 
 using namespace xt;
@@ -50,7 +46,7 @@ struct PsiEstimator {
 		xv lapses=linspace<float>(0.01, 0.2, 10),
 		xv thresholds=linspace<float>(-0.5, 1.5, 30),
 		xv slopes=linspace<float>(0.0, 10, 30),
-		xv xs=linspace<float>(0.0, 1.0, 100)
+		xv xs=linspace<float>(0.1, 1.0, 100)
 		)
 		: guess_rate(guess_rate), lapses(lapses), thresholds(thresholds), slopes(slopes),
 		xs(xs)
@@ -86,7 +82,7 @@ struct PsiEstimator {
 		auto l = sum(ll*weights)();
 		auto t = sum(tt*weights)();
 		auto s = sum(ss*weights)();
-		return gumbel(t, s, l, guess_rate);
+		return gumbel(t, s, guess_rate, l);
 	}
 	
 	auto propose_xi() {
